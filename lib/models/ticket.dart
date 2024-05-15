@@ -21,12 +21,14 @@ class Ticket extends StatefulWidget {
 
 class _TicketState extends State<Ticket> {
   FlightSummary? topCard;
+  //Definir las 3 partes del ticket
   late FlightSummary frontCard =
       FlightSummary(boardingPass: widget.boardingPass);
   late FlightDetails middleCard = FlightDetails(widget.boardingPass);
   FlightBarcode bottomCard = FlightBarcode();
-  bool _isOpen = false;
+  bool _isOpen = false; //si esta abierto el ticket, inicia en cerrado
 
+  //este es la parte debajo que se muestra al doblar el ticke
   Widget get backCard => Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4.0),
